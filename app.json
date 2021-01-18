@@ -1,0 +1,12 @@
+{
+  "name": "QuestionCardGame",
+  "displayName": "QuestionCardGame",
+  "expo": {
+    "name": "QuestionCardGame",
+    "slug": "QuestionCardGame",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+export const relationshipQuestions = [
+    'What is your definition of love?',
+    'How do you receive love (what makes you feel loved)?',
+    'What is the darkest secret you are keeping from your partner?',
+    'Have you ever lied? What is it and why did you lie?',
+    'What is your favorite memory you share with your partner?',
+    'What is the most memorable thing your partner has done for you?',
+    'Do you have a sexual fantasy?',
+    'What is the biggest change you noticed in your partner?',
+    'Do you see a future with your partner? What do you see when you imagine it?',
+    'What was something in your opinion that hindered the growth of your relationship with your partner?',
+    'On a scale from 1-10 how would you rate the trust you have for your partner. Why did you give them that rating?',
+    'Explain a time where you were the most hurt by your partner and why did this one hurt the most?',
+    'Who did you hurt the most and what did you do to them?',
+    'What’s your definition of a meaningful connection?',
+    'What do you find gross about your partner?',
+]
