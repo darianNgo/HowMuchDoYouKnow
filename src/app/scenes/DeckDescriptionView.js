@@ -11,7 +11,7 @@ class DeckDescription extends React.Component {
         super(props);
         this.state = {
             color: this.props.navigation.getParam('color'),
-            // image: require(this.props.navigation.getParam('image'))
+            // title: this.props.navigation.getParam('category')
         }
     }
 
@@ -43,6 +43,12 @@ class DeckDescription extends React.Component {
             return require('../../../assets/relationshipWhite.png')
         }
     }
+
+    // componentDidMount() {
+    //     this.props.navigation.setOptions({
+    //         title: this.props.navigation.getParam('category')
+    //     })
+    // }
 
     render() {
         const category = this.props.navigation.getParam('category')

@@ -8,12 +8,19 @@ class QuestionCategories extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            // title: 'Decks'
+        }
     }
 
-     pressHandler = () => {
-        this.props.navigation.navigate('Description')
+     pressHandler = (color, image, category) => {
+        this.props.navigation.navigate('Description', {
+            category: category,
+            color: color,
+            image: image
+          });
     }
+
 
     render() {
         return (
@@ -23,39 +30,21 @@ class QuestionCategories extends React.Component {
                         <TouchableOpacity
                         style={styles.familyButton}
                         activeOpacity = { .5 }
-                        onPress={() => {
-                            this.props.navigation.navigate('Description', {
-                              category: 'Family',
-                              color: '#8fbc8f',
-                              image: '../../../assets/familyWhite.png'
-                            });
-                          }}
+                        onPress={() => {this.pressHandler('#8fbc8f', '../../../assets/familyWhite.png', 'Family')}}
                         >
                             <Text style={styles.buttonText}> Family </Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                         style={styles.friendsButton}
                         activeOpacity = { .5 }
-                        onPress={() => {
-                            this.props.navigation.navigate('Description', {
-                              category: 'Friends',
-                              color: colors.primary,
-                              image: '../../../assets/friendsWhite.png'
-                            });
-                          }}
+                        onPress={() => {this.pressHandler(colors.primary, '../../../assets/friendsWhite.png', 'Friends')}}
                         >
                             <Text style={styles.buttonText}> Friends </Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                         style={styles.relationshipButton}
                         activeOpacity = { .5 }
-                        onPress={() => {
-                            this.props.navigation.navigate('Description', {
-                              category: 'Relationship',
-                              color: '#8b0000',
-                              image: '../../../assets/relationshipWhite.png'
-                            });
-                          }}
+                        onPress={() => {this.pressHandler('#8b0000', '../../../assets/relationshipWhite.png', 'Relationship')}}
                         >
                             <Text style={styles.buttonText}> Relationship </Text>
                         </TouchableOpacity>
