@@ -29,20 +29,32 @@ class Deck extends React.Component {
 
 
     next = () =>  {
-        // this.checkBounds
-        this.setState({
-            currentCard: this.state.currentDeck[this.state.counter += 1],
-            counter: this.state.counter++
+        if (this.state.counter >= this.state.currentDeck.length) {
+            this.setState({
+                currentCard: this.state.currentDeck[this.state.currentDeck.length],
+                counter: this.state.currentDeck.length
+            })
+        } else {
+            this.setState({
+                currentCard: this.state.currentDeck[this.state.counter += 1],
+                counter: this.state.counter++
         })
         this.flip
     }
+}
 
     prev = () =>  {
-        // this.checkBounds
-        this.setState({
-            currentCard: this.state.currentDeck[this.state.counter -= 1],
-            counter: this.state.counter--
-        })
+        if (this.state.counter <= 0) {
+            this.setState({
+                currentCard: this.state.currentDeck[0],
+                counter: 0
+            })
+        } else {
+            this.setState({
+                currentCard: this.state.currentDeck[this.state.counter -= 1],
+                counter: this.state.counter--
+            })
+        }
         this.flip
     }
 
@@ -63,21 +75,6 @@ class Deck extends React.Component {
             return relationshipDeck
         }
         return []
-    }
-
-    checkBounds = () => {
-        if (this.state.counter > this.state.currentDeck.length) {
-            this.setState({
-                counter: 0,
-                currentCard: this.state.currentDeck[0]
-            })
-        }
-        if (this.state.counter < this.state.currentDeck.length) {
-            this.setState({
-                counter: this.state.currentDeck.length,
-                currentCard: this.state.currentDeck[this.state.currentDeck.length]
-            })
-        }
     }
 
     componentDidMount() {

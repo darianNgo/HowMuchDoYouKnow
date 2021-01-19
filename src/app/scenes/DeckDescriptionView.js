@@ -19,13 +19,13 @@ class DeckDescription extends React.Component {
         const category = this.props.navigation.getParam('category')
         let description = ''
         if (category === 'Family') {
-            description = 'Family Deck description'
+            description = 'Remove existing boundaries when sharing details about your life'
         }
         if (category === 'Friends') {
-            description = 'Friends Deck description'
+            description = 'We assume we know a lot, but there is more to discover'
         }
         if (category === 'Relationship') {
-            description = 'Relationship Deck description'
+            description = 'I want us to be transparent'
         }
         return description
 
@@ -68,6 +68,11 @@ class DeckDescription extends React.Component {
                         >
 
                                 <View style={styles.descrpitionBoxTextContainer}>
+
+                                    <View style= {styles.titleContainer}>
+                                    <Text style={styles.title}>{this.props.navigation.getParam('category')} Deck </Text>
+                                    </View>
+                                   
                                     <Text style={styles.descrpitionBoxText}> {this.getDescription()} </Text>
                                 </View>
 
@@ -123,11 +128,24 @@ const styles = StyleSheet.create({
     },
     
     descrpitionBoxTextContainer: {
-        flex: 1
+        flex: 1,
+    },
+    title: {
+        color: colors.white,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 20
+    },
+    titleContainer: {
+        flex: .2,
+
     },
     descrpitionBoxText: {
         color: colors.white,
         textAlign: 'center',
+        paddingLeft: 30,
+        paddingRight: 30,
+        fontSize: 15
     },
     buttonContainer: {
         flex: .12,

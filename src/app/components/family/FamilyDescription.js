@@ -1,1 +1,1 @@
-const description = 'Family deck description';
+const familyDescription = 'Remove existing boundaries in sharing details about your life.';
