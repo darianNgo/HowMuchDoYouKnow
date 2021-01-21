@@ -11,5 +11,8 @@ export const familyQuestions = [
     'What is the most painful experience you felt that’s not physical?',
     'What’s a trait that your parents have that you admire? Share an instance of when your parents implemented that trait.',
     'We all have challenging periods in our lives - name the most challenging period while raising me/us. How did you overcome it and what did you learn from it?',
-    'If you could go back in time, what’s one thing you would change about your childhood?'
+    'If you could go back in time, what’s one thing you would change about your childhood?',
+    'In your opinion, what is something your child accomplished that you are most proud of and why?',
+    'What did you dream of becoming when you were younger?',
+
 ]

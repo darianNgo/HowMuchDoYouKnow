@@ -7,8 +7,12 @@ export const friendsQuestions = [
     'Share the first story that comes to mind when thinking of the person you miss the most presently.',
     'Who hurt you the most and why?',
     'What is the most non-physical pain you felt and how did you overcome it?',
-    'What achievement are you most proud of?',
+    'What achievement are you the most proud of?',
     'Share the first story that comes to mind of the person sitting next to you.',
     'What is a secret that no one knows?',
-    'What chapter would you call this stage of life and why?'
+    'What chapter would you call this stage of life and why?',
+    'What is your biggest fear? if it is something that you could overcome at this very moment, do it.',
+    'What is something you would say to your ex?',
+    'What relationship caused you to grow the most and how?',
+    
 ]
