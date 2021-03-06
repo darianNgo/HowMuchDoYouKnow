@@ -14,5 +14,8 @@ export const friendsQuestions = [
     'What is your biggest fear? if it is something that you could overcome at this very moment, do it.',
     'What is something you would say to your ex?',
     'What relationship caused you to grow the most and how?',
-    
+    'What do you find is the most challenging part in growing up?',
+    'As you grow older, what do you start to realize about life the most?',
+    'Are you happy? Why?',
+    'What is something you took for granted and what made you overlook its importance?',
 ]

@@ -18,5 +18,6 @@ export const relationshipQuestions = [
     'Have you started to do something because of your partner\'s infuence?',
     'Recall the most romantic momment you experienced with your partner',
     'What makes you happier in a relationship? Sharing or sacrificing? Why?',
-    
+    'What do you find as the most challenging part in your relationship',
+    'What do you find as the most important factor in having a healthy relationship?',
 ]

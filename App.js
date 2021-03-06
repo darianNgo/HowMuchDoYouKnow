@@ -1,81 +1,47 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, View, Text, StatusBar } from 'react-native';
-import HomePage from "./src/app/scenes/HomePageView";
+import { SafeAreaView, StyleSheet, View, Text, StatusBar, Button } from 'react-native';
+import {createDrawerNavigator, DrawerItem} from '@react-navigation/drawer';
+import {Icon} from 'react-native-vector-icons/FontAwesome'
 
-import Navigator from './src/app/routes/HomeStack';
+import {DrawerContent} from  './src/app/components/DrawerContent'
 
-import QuestionCategories from './src/app/scenes/QuestionCategoriesView';
-import DeckDescription from './src/app/scenes/DeckDescriptionView';
-import Deck from './src/app/scenes/DeckView';
-import { colors } from './styles/colors.js';
+
 
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import AboutPage from './src/app/scenes/About';
+import HomeStack from './src/app/routes/HomeStack';
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 
-const App = () => (
-  <Navigator/>
-);
+function HomeScreen({ navigation }) {
+  return (
+    <HomeStack/>
+  );
+}
 
-// const App = () => (
-//     <NavigationContainer>
-//       <Stack.Navigator initialRouteName="Home">
-//         <Stack.Screen 
-//         name="Home" 
-//         component={HomePage}
-//         options={{
-//           headerTintColor: colors.white,
-//           headerStyle: {
-//             backgroundColor: colors.primary,
-//           },
-//         }}
-//          />
-//         <Stack.Screen
-//         name="Categories" 
-//         component={QuestionCategories}
-//         options={{
-//         headerTintColor: colors.white,
-//         headerStyle: {
-//         backgroundColor: colors.primary,
-//         },
-//         }}>
-//         {props => <DeckDescription {...props} />}
-//         </Stack.Screen> 
-//         <Stack.Screen 
-//         name="Description"
-//          component={DeckDescription}
-//          options={{
-//           headerTintColor: colors.white,
-//           headerStyle: {
-//             backgroundColor: colors.primary,
-//           },
-//         }}
-//          />
-//         <Stack.Screen
-//          name="Deck"
-//           component={Deck}
-//           options={{
-//             headerTintColor: colors.white,
-//             headerStyle: {
-//               backgroundColor: colors.primary,
-//             },
-//           }}
-//            />
-//       </Stack.Navigator>
-//     </NavigationContainer>
-// );
+function AboutScreen({ navigation }) {
+  return (
+      <AboutPage/>
+    
+  );
+}
 
-// const Stack = createStackNavigator()
-// const AppNavigation = () => {
-//   return (
-//     <NavigationContainer>
-//       <Stack.Navigator initialRouteName="home">
-//         <Stack.Screen name="home" component={HomeScreen} />
-//       </Stack.Navigator>
-//     </NavigationContainer>
-//   )
-// }
+const Drawer = createDrawerNavigator();
+
+const DrawerNavigator = () => (
+  <Drawer.Navigator 
+  initialRouteName="Home"
+  // drawerContent={props => <DrawerContent {... props} /> }
+  >
+    <Drawer.Screen name="Home" component={HomeScreen} />
+    <Drawer.Screen name="About" component={AboutScreen} />
+  </Drawer.Navigator>
+)
 
 
-
-{/* <Navigator/> */}
-export default App;
+export default function App() {
+  return (
+    <NavigationContainer>
+      <DrawerNavigator/>
+    </NavigationContainer>
+  );
+}

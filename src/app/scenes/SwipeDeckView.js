@@ -109,18 +109,18 @@ class Deck extends React.Component {
       }
 
 
-    getImage = () => {
-        const category = this.props.navigation.getParam('category')
-        if (category === 'Family') {
-             return require('../../../assets/familyGreen.png')
-        }
-        if (category === 'Friends') {
-            return require('../../../assets/friendsBlue.png')
-        }
-        if (category === 'Relationship') {
-            return require('../../../assets/relationshipRed.png')
-        }
-    }
+    // getImage = () => {
+    //     const category = this.props.navigation.getParam('category')
+    //     if (category === 'Family') {
+    //          return require('../../../assets/familyGreen.png')
+    //     }
+    //     if (category === 'Friends') {
+    //         return require('../../../assets/friendsBlue.png')
+    //     }
+    //     if (category === 'Relationship') {
+    //         return require('../../../assets/relationshipRed.png')
+    //     }
+    // }
 
 
     render() {
@@ -146,8 +146,8 @@ class Deck extends React.Component {
                     stackSeparation={10}
                     cardVerticalMargin={200}
                     cardHorizontalMargin={65}
-                    marginTop={200}
-                    marginBottom={200}
+                    marginTop={150}
+                    marginBottom={150}
                     stackSize= {10}>
                     
                     </Swiper>

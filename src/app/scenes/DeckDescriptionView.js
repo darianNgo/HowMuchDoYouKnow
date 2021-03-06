@@ -31,18 +31,18 @@ class DeckDescription extends React.Component {
 
     }
 
-    getImage = () => {
-        const category = this.props.navigation.getParam('category')
-        if (category === 'Family') {
-             return require('../../../assets/familyWhite.png')
-        }
-        if (category === 'Friends') {
-            return require('../../../assets/friendsWhite.png')
-        }
-        if (category === 'Relationship') {
-            return require('../../../assets/relationshipWhite.png')
-        }
-    }
+    // getImage = () => {
+    //     const category = this.props.navigation.getParam('category')
+    //     if (category === 'Family') {
+    //          return require('../../../assets/familyWhite.png')
+    //     }
+    //     if (category === 'Friends') {
+    //         return require('../../../assets/friendsWhite.png')
+    //     }
+    //     if (category === 'Relationship') {
+    //         return require('../../../assets/relationshipWhite.png')
+    //     }
+    // }
 
     // componentDidMount() {
     //     this.props.navigation.setOptions({
