@@ -17,4 +17,5 @@ export const familyQuestions = [
     'Is there an event in my life that you can relate to when you were my age?',
     'Which of my friends do you think has the most positive influence on me and which of my frineds do you think have the most negative influnce on me?',
     'What do you think is the most important factor in having a healthy relationship with your family',
+    'What is the most valuable lesson you learned from you your parents?',
 ]

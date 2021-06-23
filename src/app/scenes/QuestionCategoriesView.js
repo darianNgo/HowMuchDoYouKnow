@@ -39,7 +39,7 @@ class QuestionCategories extends React.Component {
                 <SafeAreaView style= {styles.buttonContainer}>
                         <TouchableOpacity
                         activeOpacity = { .5 }
-                        onPress={() => {this.pressHandler(colors.family, '../../../assets/familyWhite.png', 'Family')}}
+                        onPress={() => {this.pressHandler(colors.family, '../../../assets/familyWhite.png', 'family')}}
                         >
                             <Image
                             style={styles.image}
@@ -47,7 +47,7 @@ class QuestionCategories extends React.Component {
                         </TouchableOpacity>
                         <TouchableOpacity
                         activeOpacity = { .5 }
-                        onPress={() => {this.pressHandler(colors.friends, '../../../assets/friendsWhite.png', 'Friends')}}
+                        onPress={() => {this.pressHandler(colors.friends, '../../../assets/friendsWhite.png', 'friends')}}
                         >
                             <Image 
                             style={styles.image}
@@ -55,7 +55,7 @@ class QuestionCategories extends React.Component {
                         </TouchableOpacity>
                         <TouchableOpacity
                         activeOpacity = { .5 }
-                        onPress={() => {this.pressHandler(colors.relationship, '../../../assets/relationshipWhite.png', 'Relationship')}}
+                        onPress={() => {this.pressHandler(colors.relationship, '../../../assets/relationshipWhite.png', 'relationship')}}
                         >
                             <Image 
                             style={styles.image}
@@ -125,30 +125,7 @@ const styles = StyleSheet.create({
         width: 400,
         height: 140
     },
-    // friendsButton: {
-    //     marginTop:1,
-    //     marginBottom: 10,
-    //     paddingTop:50,
-    //     paddingBottom:50,
-    //     paddingLeft: 65,
-    //     paddingRight: 65,
-    //     backgroundColor: '#fff',
-    //     borderRadius:5,
-    //     borderWidth: 1,
-    //     borderColor: '#fff',
-    // },
-    // relationshipButton: {
-    //     marginTop:1,
-    //     marginBottom: 5,
-    //     paddingTop:50,
-    //     paddingBottom:50,
-    //     paddingLeft: 50,
-    //     paddingRight: 50,
-    //     backgroundColor: '#fff',
-    //     borderRadius:5,
-    //     borderWidth: 1,
-    //     borderColor: '#fff',
-    // },
+
     buttonText: {
         color: '#6E8EEF',
         textAlign: 'center',

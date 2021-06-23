@@ -2,11 +2,11 @@
   "expo": {
    "name": "How Much Do You Know",
    "icon": "./assets/HMDYK.png",
-   "version": "2.0.0",
+   "version": "2.1.0",
    "slug": "how-much-do-you-know",
    "ios": {
      "bundleIdentifier": "com.darianngo.howmuchdoyouknow",
-     "buildNumber": "2.0.0"
+     "buildNumber": "2.1.0"
    },
    "android": {
      "package": "com.darianngo.howmuchdoyouknow",

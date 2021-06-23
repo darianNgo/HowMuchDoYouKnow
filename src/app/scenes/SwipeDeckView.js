@@ -18,78 +18,53 @@ class Deck extends React.Component {
         super(props);
         this.state = {
             counter: 0,
-            isflipped: false,
-            currentDeck: this.getDeck(),
+            currentDeck: [],
             currentCard: '',
-            color: this.props.navigation.getParam('color')
+            color: this.props.navigation.getParam('color'),
+            category: this.props.navigation.getParam('category')
         }
     }
 
-    flip = () => {
-        this.setState({isflipped: !this.state.isflipped})
-    }
 
+    // reasons the api might fail
+    // 1. client / user throwing an exception 
+    // 2. server is throwing an exception
+    // 3. malformed exception
 
-    next = () =>  {
-        if (this.state.counter >= this.state.currentDeck.length) {
-            this.setState({
-                currentCard: this.state.currentDeck[this.state.currentDeck.length],
-                counter: this.state.currentDeck.length
-            })
-        } else {
-            this.setState({
-                currentCard: this.state.currentDeck[this.state.counter += 1],
-                counter: this.state.counter++
-        })
-        this.flip
-    }
-}
+    // this function should make a http request to the card deck endpoint
+    // then it will store the response in the phone local storage
+    // if the api request failed, then return the default questions 
+    // or the questions on local storage
 
-    prev = () =>  {
-        if (this.state.counter <= 0) {
-            this.setState({
-                currentCard: this.state.currentDeck[0],
-                counter: 0
-            })
-        } else {
-            this.setState({
-                currentCard: this.state.currentDeck[this.state.counter -= 1],
-                counter: this.state.counter--
-            })
+    setDeck() {
+        try {
+            fetch('http://10.0.0.80:8080/api/v1/questions/' + this.props.navigation.getParam('category'))
+                .then((response) => response.json())
+                .then((responseJson) => {
+                    let deck = [];
+                    for (let val in responseJson) {
+                        deck.push(responseJson[val].question)
+                    }
+                    this.setState({
+                        counter: 0,
+                        currentDeck: this.shuffle(deck)
+                    })
+                    this.setState({
+                        currentCard: this.state.currentDeck[this.state.counter]
+                    })
+                })
+        } catch (error) {
+            console.log("Error fetching data ------------------", error)
         }
-        this.flip
-    }
-
-
-    getDeck = () => {
-        const category = this.props.navigation.getParam('category')
-        let familyDeck = familyQuestions
-        let friendsDeck = friendsQuestions
-        let relationshipDeck = relationshipQuestions
-
-        if (category === 'Family') {
-            return familyDeck
-        }
-        if (category === 'Friends') {
-            return friendsDeck
-        }
-        if (category === 'Relationship') {
-            return relationshipDeck
-        }
-        return []
     }
 
     componentDidMount() {
-        this.setState({
-            counter: 0,
-            currentDeck: this.shuffle(this.getDeck())
-        })
-        this.setState({
-            currentCard: this.state.currentDeck[this.state.counter]
-        })
+        this.setDeck()
     }
 
     shuffle(array) {
+  
+
         var currentIndex = array.length, temporaryValue, randomIndex;
       
         // While there remain elements to shuffle...
@@ -104,6 +79,7 @@ class Deck extends React.Component {
           array[currentIndex] = array[randomIndex];
           array[randomIndex] = temporaryValue;
         }
+
       
         return array;
       }
@@ -136,7 +112,7 @@ class Deck extends React.Component {
                     cardHorizontalMargin={65}
                     marginTop={150}
                     marginBottom={150}
-                    stackSize= {10}>
+                    stackSize= {15}>
                     </Swiper>
                 </View>
             );
