@@ -14,4 +14,10 @@ export const relationshipQuestions = [
     'Who did you hurt the most and what did you do to them?',
     'What’s your definition of a meaningful connection?',
     'What do you find gross about your partner?',
+    'What was your first impression of your partner? What differences have you noticed now that you have gotten to know them?',
+    'Have you started to do something because of your partner\'s infuence?',
+    'Recall the most romantic momment you experienced with your partner',
+    'What makes you happier in a relationship? Sharing or sacrificing? Why?',
+    'What do you find as the most challenging part in your relationship',
+    'What do you find as the most important factor in having a healthy relationship?',
 ]

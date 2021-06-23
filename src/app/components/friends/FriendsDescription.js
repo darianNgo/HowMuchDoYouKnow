@@ -1,1 +1,1 @@
-const description = 'Friends deck description';
+const friendsDescription = 'We assume we know a lot, but there is more to discover';

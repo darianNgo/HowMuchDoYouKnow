@@ -1,40 +1,47 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Router, Route, Link } from './src/app/react-router.native';
-import HomePage from "./src/app/scenes/HomePageView";
-// import Drawer from "./src/app/components/Drawer"
-import Navigator from './src/app/routes/HomeStack';
+import { SafeAreaView, StyleSheet, View, Text, StatusBar, Button } from 'react-native';
+import {createDrawerNavigator, DrawerItem} from '@react-navigation/drawer';
+import {Icon} from 'react-native-vector-icons/FontAwesome'
 
-const About = () => <Text>About</Text>;
+import {DrawerContent} from  './src/app/components/DrawerContent'
 
-const App = () => (
-  <Navigator/>
-);
 
-const styles = StyleSheet.create({
-  container: {
-    marginTop: 25,
-    padding: 10
-  },
-  nav:{
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
-});
 
-export default App;
+import { NavigationContainer } from "@react-navigation/native";
+import AboutPage from './src/app/scenes/About';
+import HomeStack from './src/app/routes/HomeStack';
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 
-    // <Router>
-    //   <View style={styles.container}>
-    //     <View style={styles.nav}>
-    //       <Link to="/">
-    //         <Text>Home</Text>
-    //       </Link>
-    //       <Link to="/about">
-    //         <Text>About</Text>
-    //       </Link>
-    //     </View>
-    //     <Route exact path="/" component={HomePage} />
-    //     <Route path="/about" component={About} />
-    //   </View>
-    // </Router>
+function HomeScreen({ navigation }) {
+  return (
+    <HomeStack/>
+  );
+}
+
+function AboutScreen({ navigation }) {
+  return (
+      <AboutPage/>
+    
+  );
+}
+
+const Drawer = createDrawerNavigator();
+
+const DrawerNavigator = () => (
+  <Drawer.Navigator 
+  initialRouteName="Home"
+  // drawerContent={props => <DrawerContent {... props} /> }
+  >
+    <Drawer.Screen name="Home" component={HomeScreen} />
+    <Drawer.Screen name="About" component={AboutScreen} />
+  </Drawer.Navigator>
+)
+
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <DrawerNavigator/>
+    </NavigationContainer>
+  );
+}

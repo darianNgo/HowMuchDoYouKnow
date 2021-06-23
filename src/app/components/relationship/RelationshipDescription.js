@@ -1,1 +1,1 @@
-const description = 'Relationship deck description';
+const relationshipDescription = 'I want us to be transparent';

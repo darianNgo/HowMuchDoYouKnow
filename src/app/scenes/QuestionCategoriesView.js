@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View, SafeAreaView, Image, Button, TouchableOpacity, Alert} from 'react-native';
 import { colors } from '../../../styles/colors.js';
+import {LinearGradient} from 'expo-linear-gradient';
 
 // https://reactnativecode.com/rounded-corners-button-example/ - button
 
@@ -8,60 +9,61 @@ class QuestionCategories extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            // title: 'Decks'
+        }
     }
 
-     pressHandler = () => {
-        this.props.navigation.navigate('Description')
+     pressHandler = (color, image, category) => {
+        this.props.navigation.navigate('Deck', {
+            category: category,
+            color: color,
+            image: image
+          });
     }
+
 
     render() {
         return (
-            <View style={styles.container}>
-                <View style={styles.space} />
+            <SafeAreaView style={styles.container}>
+                <View style ={styles.picContain}>
+                    <Image
+                    style={styles.back}
+                    source={require('../../../assets/clouds.jpg')}
+                    />
+                </View>
+                <View style = {styles.textContain}>
+                    <Text style={styles.Title}>Who are you playing with today?</Text>
+                    </View>
+                {/* <View style={styles.space} /> */}
                 <SafeAreaView style= {styles.buttonContainer}>
                         <TouchableOpacity
-                        style={styles.familyButton}
                         activeOpacity = { .5 }
-                        onPress={() => {
-                            this.props.navigation.navigate('Description', {
-                              category: 'Family',
-                              color: '#8fbc8f',
-                              image: '../../../assets/familyWhite.png'
-                            });
-                          }}
+                        onPress={() => {this.pressHandler(colors.family, '../../../assets/familyWhite.png', 'family')}}
                         >
-                            <Text style={styles.buttonText}> Family </Text>
+                            <Image
+                            style={styles.image}
+                            source={require('../../../assets/family.jpg')}/>
                         </TouchableOpacity>
                         <TouchableOpacity
-                        style={styles.friendsButton}
                         activeOpacity = { .5 }
-                        onPress={() => {
-                            this.props.navigation.navigate('Description', {
-                              category: 'Friends',
-                              color: colors.primary,
-                              image: '../../../assets/friendsWhite.png'
-                            });
-                          }}
+                        onPress={() => {this.pressHandler(colors.friends, '../../../assets/friendsWhite.png', 'friends')}}
                         >
-                            <Text style={styles.buttonText}> Friends </Text>
+                            <Image 
+                            style={styles.image}
+                            source={require('../../../assets/friends.jpg')}/>
                         </TouchableOpacity>
                         <TouchableOpacity
-                        style={styles.relationshipButton}
                         activeOpacity = { .5 }
-                        onPress={() => {
-                            this.props.navigation.navigate('Description', {
-                              category: 'Relationship',
-                              color: '#8b0000',
-                              image: '../../../assets/relationshipWhite.png'
-                            });
-                          }}
+                        onPress={() => {this.pressHandler(colors.relationship, '../../../assets/relationshipWhite.png', 'relationship')}}
                         >
-                            <Text style={styles.buttonText}> Relationship </Text>
+                            <Image 
+                            style={styles.image}
+                            source={require('../../../assets/relationship.jpg')}/>
                         </TouchableOpacity>
                 </SafeAreaView>
-                <View style={styles.space} />
-            </View>
+                {/* <View style={styles.space} /> */}
+            </SafeAreaView>
             );
     }
 }
@@ -70,60 +72,62 @@ const styles = StyleSheet.create({
     container: {
         alignContent: 'center',
         justifyContent: 'center',
-        alignItems: 'stretch',
-        backgroundColor: colors.white,
+        backgroundColor: '#6E8EEF',
         flex: 1,
-        flexDirection: 'row'
+        flexDirection: 'column'
     },
-    buttonContainer: {
+    picContain: {
+        alignContent: 'center',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+        paddingRight: 50,
+        paddingTop: 50
+    },
+    textContain: {
+        alignContent: 'center',
+        alignItems: 'center',
+        paddingTop: 30
+    },
+    Title: {
+        color: colors.white,
+        fontWeight: 'bold',
+        fontSize: 20,
+    },
+    back: {
+        width: 260,
+        height: 120,
+        
+    },
+    background: {
+        backgroundColor: '#6E8EEF',
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
         alignContent: 'center',
         justifyContent: 'center',
-        alignItems: 'stretch',
-        backgroundColor: colors.white,
-        flex: 2,
+    },
+    buttonContainer: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#6E8EEF',
+        flexDirection: 'column',
+        flex: 1,
+
     },
     space: {
-        backgroundColor: colors.white,
+        backgroundColor: '#6E8EEF',
         flex: 1,
     },
-    familyButton: {
-        marginTop:50,
-        marginBottom: 50,
-        paddingTop:15,
-        paddingBottom:15,
-        paddingLeft: 50,
-        paddingRight: 50,
-        backgroundColor: '#8fbc8f',
-        borderRadius:10,
-        borderWidth: 1,
-        borderColor: '#fff',
+    image: {
+        resizeMode: 'stretch',
+        width: 400,
+        height: 140
     },
-    friendsButton: {
-        marginTop:50,
-        marginBottom: 50,
-        paddingTop:15,
-        paddingBottom:15,
-        paddingLeft: 50,
-        paddingRight: 50,
-        backgroundColor: colors.primary,
-        borderRadius:10,
-        borderWidth: 1,
-        borderColor: '#fff',
-    },
-    relationshipButton: {
-        marginTop:50,
-        marginBottom: 50,
-        paddingTop:15,
-        paddingBottom:15,
-        paddingLeft: 50,
-        paddingRight: 50,
-        backgroundColor: '#8b0000',
-        borderRadius:10,
-        borderWidth: 1,
-        borderColor: '#fff',
-    },
+
     buttonText: {
-        color: colors.white,
+        color: '#6E8EEF',
         textAlign: 'center',
     }
 });

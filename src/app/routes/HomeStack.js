@@ -3,7 +3,7 @@ import {createAppContainer} from 'react-navigation';
 import HomePage from '../scenes/HomePageView';
 import QuestionCategories from '../scenes/QuestionCategoriesView';
 import DeckDescription from '../scenes/DeckDescriptionView';
-import Deck from '../scenes/DeckView';
+import Deck from '../scenes/SwipeDeckView';
 import { colors } from '../../../styles/colors.js';
 
 const screens = {
@@ -26,10 +26,11 @@ const HomeStack = createStackNavigator(screens, {
         headerStyle: {
             backgroundColor: colors.primary,
         },
+        headerShown: false,
         headerTitleStyle: {
-            color: colors.white,
+            color: colors.primary,
         },
-        headerTintColor: colors.white,
+        headerTintColor: colors.primary,
     }
 });
 
