@@ -16,6 +16,7 @@ class DeckDescription extends React.Component {
     }
 
     getDescription = () => {
+
         const category = this.props.navigation.getParam('category')
         let description = ''
         if (category === 'Family') {

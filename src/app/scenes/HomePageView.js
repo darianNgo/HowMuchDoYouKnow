@@ -12,7 +12,6 @@ class HomePage extends React.Component {
         this.state = {}
     }
 
-
     pressHandler = () =>  {
        this.props.navigation.navigate('Categories')
     }

@@ -2,11 +2,7 @@ import React from 'react';
 import { SafeAreaView, StyleSheet, View, Text, StatusBar, Button } from 'react-native';
 import {createDrawerNavigator, DrawerItem} from '@react-navigation/drawer';
 import {Icon} from 'react-native-vector-icons/FontAwesome'
-
 import {DrawerContent} from  './src/app/components/DrawerContent'
-
-
-
 import { NavigationContainer } from "@react-navigation/native";
 import AboutPage from './src/app/scenes/About';
 import HomeStack from './src/app/routes/HomeStack';
