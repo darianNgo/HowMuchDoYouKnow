@@ -12,6 +12,7 @@ class HomePage extends React.Component {
         this.state = {}
     }
 
+    // navigates to next page titled "Categories" on ../routes/HomeStack.js
     pressHandler = () =>  {
        this.props.navigation.navigate('Categories')
     }

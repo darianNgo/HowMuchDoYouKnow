@@ -62,6 +62,7 @@ class Deck extends React.Component {
         this.setDeck()
     }
 
+    // takes the set deck of questions in the array and shuffles the order
     shuffle(array) {
   
 

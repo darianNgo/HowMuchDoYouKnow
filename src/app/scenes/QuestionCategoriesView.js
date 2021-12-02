@@ -1,7 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, SafeAreaView, Image, Button, TouchableOpacity, Alert} from 'react-native';
 import { colors } from '../../../styles/colors.js';
-import {LinearGradient} from 'expo-linear-gradient';
 
 // https://reactnativecode.com/rounded-corners-button-example/ - button
 
@@ -14,11 +13,10 @@ class QuestionCategories extends React.Component {
         }
     }
 
-     pressHandler = (color, image, category) => {
+     pressHandler = (color, category) => {
         this.props.navigation.navigate('Deck', {
             category: category,
             color: color,
-            image: image
           });
     }
 
@@ -32,37 +30,42 @@ class QuestionCategories extends React.Component {
                     source={require('../../../assets/clouds.jpg')}
                     />
                 </View>
+                {/* Title */}
                 <View style = {styles.textContain}>
                     <Text style={styles.Title}>Who are you playing with today?</Text>
                     </View>
-                {/* <View style={styles.space} /> */}
+                {/* Categories */}
                 <SafeAreaView style= {styles.buttonContainer}>
+                    {/* The area that is "Touchable" containning the onpress to navigate  with the given props */}
                         <TouchableOpacity
                         activeOpacity = { .5 }
-                        onPress={() => {this.pressHandler(colors.family, '../../../assets/familyWhite.png', 'family')}}
+                        onPress={() => {this.pressHandler(colors.family, 'family')}}
                         >
+                            {/* The image that is touuchable */}
                             <Image
                             style={styles.image}
                             source={require('../../../assets/family.jpg')}/>
                         </TouchableOpacity>
+
                         <TouchableOpacity
                         activeOpacity = { .5 }
-                        onPress={() => {this.pressHandler(colors.friends, '../../../assets/friendsWhite.png', 'friends')}}
+                        onPress={() => {this.pressHandler(colors.friends, 'friends')}}
                         >
                             <Image 
                             style={styles.image}
                             source={require('../../../assets/friends.jpg')}/>
                         </TouchableOpacity>
+
                         <TouchableOpacity
                         activeOpacity = { .5 }
-                        onPress={() => {this.pressHandler(colors.relationship, '../../../assets/relationshipWhite.png', 'relationship')}}
+                        onPress={() => {this.pressHandler(colors.relationship, 'relationship')}}
                         >
                             <Image 
                             style={styles.image}
                             source={require('../../../assets/relationship.jpg')}/>
                         </TouchableOpacity>
+
                 </SafeAreaView>
-                {/* <View style={styles.space} /> */}
             </SafeAreaView>
             );
     }
