@@ -38,7 +38,7 @@ class Deck extends React.Component {
 
     setDeck() {
         try {
-            fetch('http://10.0.0.80:8080/api/v1/questions/' + this.props.navigation.getParam('category'))
+            fetch('http://localhost:8080/api/v1/questions/' + this.props.navigation.getParam('category'))
                 .then((response) => response.json())
                 .then((responseJson) => {
                     let deck = [];
@@ -62,6 +62,7 @@ class Deck extends React.Component {
         this.setDeck()
     }
 
+    // takes the set deck of questions in the array and shuffles the order
     shuffle(array) {
   
 

@@ -2,7 +2,6 @@ import { createStackNavigator } from 'react-navigation-stack';
 import {createAppContainer} from 'react-navigation';
 import HomePage from '../scenes/HomePageView';
 import QuestionCategories from '../scenes/QuestionCategoriesView';
-import DeckDescription from '../scenes/DeckDescriptionView';
 import Deck from '../scenes/SwipeDeckView';
 import { colors } from '../../../styles/colors.js';
 
@@ -12,9 +11,6 @@ const screens = {
     },
     Categories: {
         screen: QuestionCategories,
-    },
-    Description: {
-        screen: DeckDescription,
     },
     Deck: {
         screen: Deck,
